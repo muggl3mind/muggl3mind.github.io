@@ -1,0 +1,23 @@
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Pinterest Authorization</title>
+       <style>
+           body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; text-align: center; }
+           .code { background: #f4f4f4; padding: 10px; margin: 20px 0; border-radius: 5px; word-break: break-all; }
+       </style>
+   </head>
+   <body>
+       <h1>Pinterest Authorization</h1>
+       <p>Authorization successful! You can close this window.</p>
+       <div id="codeDisplay"></div>
+       <script>
+           const urlParams = new URLSearchParams(window.location.search);
+           const code = urlParams.get('code');
+           if (code) {
+               document.getElementById('codeDisplay').innerHTML = 
+                   '<p><strong>Authorization Code:</strong></p><div class="code">' + code + '</div><p>Copy this code for your Pinterest setup.</p>';
+           }
+       </script>
+   </body>
+   </html>
